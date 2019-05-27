@@ -1,0 +1,141 @@
+{
+    "FORM": {
+        "TABS": {
+	        "ZADANI": "Základní údaje",
+	        "SROVNANI": "Srovnání",
+	        "SJEDNANI": "Online sjednání"
+		},
+        "BUTTONS": {     	        
+	        "ZPET": "Zpět",
+	        "DALE": "Přepočítat",
+			"FILTRY": "Filtry",
+			"CLOSE": "Zavřít",
+			"SJEDNAT": "Sjednat",
+			"SROVNAT": "Srovnat nabídky",
+			"OFFERS_PDF": "Stáhnout v PDF",
+			"SDILENI": "Sdílet/uložit odkaz na tuto kalkulaci",
+			"EMAIL": "Zaslat na email",
+			"NOVA": "Nová kalkulace",
+			"NOVATIP": "Vyresetuje formulář pro novou kalkulaci"
+		},
+		"SELECT" : {
+	        "DEFAULT": "Vyberte prosím z nabídky",
+	        "SEARCHTEXT": "Napište pár znaků...",
+	        "NOTFOUND": "Žádná položka"	        
+		},
+        "VALIDATION" : {
+	        "REQUIRED": "Vyplňte prosím toto pole.",
+	        "RADIOREQUIRED": "Vyberte prosím jednu z voleb.",
+	        "MAX": "Maximální hodnota je {{value}}.",
+	        "MIN": "Minimální hodnota je {{value}}.",
+			"RANGE": "Povolená hodnota je {{min}} - {{max}}.",
+			"EMAIL": "Zadejte prosím platnou emailovou adresu."
+		},
+        "ANO": "Ano",
+        "NE": "Ne",
+        "KC": "Kč",
+        "LET": "let",
+        "FIX": "{{fix}}"        
+    },
+    "ZADANI": {
+		"CLAIM": "Cestovní pojištění - online kalkulačka",
+		"SUBCLAIM": "Kam a kdy se vypravíte?",
+        "ZEME": {
+        	"LABEL": "Cíl",
+        	"HINT": "V případě, že Váše cesta bude ve více zemích, vyberte tu, která je nejvzdálenější, nejvíce exotická či riziková."
+        },
+        "TERMIN": {
+			"LABEL": "Termín",
+			"PLACEHOLDER": "vyberte z kalendáře",
+        	"HINT": "Počátek pojištění může být od aktuálního data, ale v tomto případě je nutné pojištění zaplatit okamžitě pomocí platebních metod, které pojišťovny nabízení (platební karta, PaySec apod.). Jinak je třeba počítat s časovou rezervou pro zaslání platby. Pojištění můžete uzavřít až 90 dnů před plánovaným odjezdem."
+		},
+        "STORNO": {
+			"LABEL": "Včetně storna?",
+			"PLACEHOLDER": "celková cena",
+        	"HINT": "<strong>Pojištění storna zájezdu</strong> - jedná se o připojištění, kdy v případě, že Vám vážné důvody (onemocnění, smrt rodinného příslušníka, apod.) znemožní odcestovat, pojišťovna uhradí storno poplatky.<br />Toto připojištění je nutno sjednat před datem plné úhrady cestovní služby, např. zaplacením dovolené či zájezdu."
+		},
+		"POCETOSOB": {
+			"LABEL": "Počet osob",
+			"PLACEHOLDER": "",			
+        	"HINT": ""
+		},		
+        "RODINA": {
+			"LABEL": "Rodina?",			
+        	"HINT": ""
+		},
+		"VEKOSOB": {
+			"LABEL": "Věk osob",
+			"PLACEHOLDER": "věk {{value}}. osoby",			
+        	"HINT": ""
+		},	
+		"SPORTY": {
+        	"LABEL": "Sporty",
+			"HINT": "Většina pojišťoven rozlišuje běžné a rizikové sporty, které je třeba připojistit. Některé si nechají připlatit i za zimní sporty (lyžování, snowboard).<br />Některé velmi rizikové aktivity jsou i tzv. \"nepojistitelné\" - věnujte proto velkou pozornost pojistným podmínkám, budete-li se na své výpravě provozovat nějaký rizikový sport, a přesvědčte se, že není vyloučen z pojištění!",
+			"REK": "Rekreační",
+			"ZIM": "Zimní",
+			"RIZ": "Rizikové"
+		},
+		"TYP": {
+        	"LABEL": "Typ",
+			"HINT": "<strong>Turistická</strong> - rekreační turistika, rekreační cesty a pobyty, studijní pobyt a stáže, administrativní práce nemanuálního charakteru.<br / ><strong>Pracovní</strong> - cesty a pobyt za účelem plnění pracovních úkolů zaměstnance i podnikatele, manuální práce, práce v provozech.",
+			"TUR": "Turistika",
+			"PRA": "Pracovní"
+		}		
+	},
+    "MODAL": {   
+        "SDILENI": {
+			"TITLE": "Sdílejte kalkulaci cestovního pojištění",
+			"PLACEHOLDER": "Odkaz na tuto kalkulaci",
+			"TEXT": "Zkopírujte si odkaz na tuto kalkulaci cestovního pojištění, abyste ji mohli snadno sdílet s&nbsp;ostatními nebo&nbsp;se&nbsp;k&nbsp;ní později sami vrátit."
+		},
+        "EMAIL": {
+			"TITLE": "Kalkulace cestovního pojištění na email",
+			"LABEL": "Emailová adresa",
+			"PLACEHOLDER": "Vaše emailová adresa",
+			"SEND": "Odeslat",
+			"SENT": "Odesláno na Váš email.",
+			"TEXT": "Pošlete si odkaz na tuto kalkulaci cestovního pojištění na Váš email, abyste&nbsp;s&nbsp;k&nbsp;ní mohli později vrátit."
+		}
+    }, 
+	"SROVNANI": {   
+	    "TITLE": "Srovnání cestovního pojištění",
+	    "BACK": "Upravit zadání",
+	    "ALERT": "Srovnání předpokládá optimální výši zabezpečení zástavou a dostatečnou bonitu žadatele. Ověřte:",    
+	    "CLOSE": "Zavřít",
+        "PARTNER": "Partner",
+        "KALKULUJI": "Počítám nabídky cestovního pojištění. Prosím o chvilku strpení.",      
+        "FILTRY": {
+        	"HINT": "pro lepší orientaci v nabídkách si můžete vyfiltrovat jen ty odpovídající Vašim potřebám."
+		},
+        "SDILENI": {
+        	"HINT": ""
+		},		
+		"LV": {
+        	"TITLE": "Léčebné výlohy",
+        	"HINT": "Limit plnění léčebných výloh"
+        },
+        "ZAV": {
+        	"TITLE": "Pojištění zavazadel",
+        	"HINT": "Limit plnění pro pojištění zavazadel"
+        },
+        "UR": {
+        	"TITLE": "Úrazové pojištění",
+        	"HINT": "Limit plnění pro úrazové pojištění"
+        },
+        "ODP": {
+        	"TITLE": "Pojištění odpovědnosti",
+        	"HINT": "Limit plnění pro pojištění odpovědnosti"
+		},
+		"CENATITLE": "Celková cena<br />počet osob: {{osob}}, počet dnů: {{dnu}}",
+		"CENA": "Celková cena"
+    },    
+    "FILTRY": {
+    	"TITLE": "Filtry a nastavení<small class=\"hidden-sm-down text-muted\"> - přizpůsobte si zobrazení nabídek podle Vašich potřeb</small>",
+		"PARTNERS": "Pojišťovny",
+    	"SELECT_ALL": "Vybrat vše",
+		"MUSTHAVE": "Nabídka musí obsahovat",									    	
+		"ZAV": "pojištění zavazadel",
+		"URAZ": "úrazové pojištění",
+		"ODP": "pojištění odpovědnosti"				
+    }          
+}

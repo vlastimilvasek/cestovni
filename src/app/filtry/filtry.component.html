@@ -1,0 +1,53 @@
+<fieldset #pf id="pf" ngModelGroup="pf">
+
+<div class="row">
+	<div class="col-12 col-md-6">
+
+		<!--  Filtr partneři -->
+		
+		<h5 class="card-title">{{ 'FILTRY.PARTNERS' | translate }}
+			<small><a type="button" class="btn btn-link" (click)="partneriVse($event)">{{ 'FILTRY.SELECT_ALL' | translate }}</a></small>
+		</h5>
+		<div class="ml-3">
+			<div *ngFor="let p of filters.partneri" class="form-group1">
+				<div class="custom-control custom-checkbox col align-items-center">
+					<input class="custom-control-input" name="{{ p }}" id="id_{{ p }}" [(ngModel)]="filters.partnobj[p]" value="1" type="checkbox" />
+					<label class="custom-control-label" for="id_{{ p }}">
+						<img src="{{ LOGA[p] }}" style="max-height:30px;" alt="{{ p }}" />
+					</label>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="col-12 col-md-6">
+
+		<div *ngIf="data.pojisteni == 'CEST';">
+			<h5 class="card-title">{{ 'FILTRY.MUSTHAVE' | translate }}</h5>
+
+			<div class="custom-control custom-checkbox mb-2">
+				<input class="custom-control-input" id="min_zavl" name="min_zavl" [(ngModel)]="filters.min_zavl" value="1" type="checkbox" />
+				<label class="custom-control-label" for="min_zavl">
+					{{ 'FILTRY.ZAV' | translate }} 
+				</label>
+			</div>
+
+			<div class="custom-control custom-checkbox mb-2">
+				<input class="custom-control-input" id="min_urtn" name="min_urtn" [(ngModel)]="filters.min_urtn" value="1" type="checkbox" />
+				<label class="custom-control-label" for="min_urtn">
+					{{ 'FILTRY.URAZ' | translate }} 
+				</label>
+			</div>
+
+			<div class="custom-control custom-checkbox mb-2">
+				<input class="custom-control-input" id="min_odpz" name="min_odpz" [(ngModel)]="filters.min_odpz" value="1" type="checkbox" />
+				<label class="custom-control-label" for="min_odpz">
+					{{ 'FILTRY.ODP' | translate }} 
+				</label>
+			</div>
+		</div>		
+		
+	</div>
+</div>
+
+</fieldset>

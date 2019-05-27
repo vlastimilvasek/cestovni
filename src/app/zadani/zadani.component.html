@@ -1,0 +1,219 @@
+<fieldset #zadani id="zadani" ngModelGroup="zadani">
+
+	<h3 class="head-title">{{ 'ZADANI.CLAIM' | translate }}</h3>
+	<h4 class="vagl text-center">{{ 'ZADANI.SUBCLAIM' | translate }}</h4>
+
+	<div id="start"></div>
+
+	<ng-template #hintZeme><div class="text-left" [innerHtml]="'ZADANI.ZEME.HINT' | translate"></div></ng-template>    
+	<div class="form-group row">
+		<label class="{{ layout.grid.z_label }}  col-form-label"
+			placement="right auto"
+			triggers="mouseenter:mouseleave"		
+			[tooltip]="('ZADANI.ZEME.HINT' | translate) === '' ? '' : hintZeme">
+            {{ 'ZADANI.ZEME.LABEL' | translate }}
+            <i *ngIf="('ZADANI.ZEME.HINT' | translate) !== ''" class="far fa-question-circle label-hint"></i>
+		</label>		
+		<div class="{{ layout.grid.z_input }}"> 
+			<ngx-select name="zeme" #Zeme="ngModel" [allowClear]="false" [items]="lists.zeme"
+				optGroupLabelField="label" optGroupOptionsField="children"
+				[(ngModel)]="data.zeme" placeholder="{{ 'FORM.SELECT.DEFAULT' | translate }}">
+			
+				<ng-template ngx-select-option ngx-select-option-selected let-option let-text="text">
+					<span class="flag" [innerHtml]="flag(option.data.value)"></span>
+					<span class="flaglabel" [innerHtml]="text"></span>
+				</ng-template>
+			
+				<ng-template ngx-select-option-not-found>
+					{{ 'FORM.SELECT.NOTFOUND' | translate }}
+				</ng-template>
+			
+			</ngx-select>
+		</div>
+		<small [hidden]="Zeme.valid || (Zeme.pristine && !submitted)" class="text-danger {{ layout.grid.offset3 }} {{ layout.grid.input3 }}">
+			{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+		</small>	
+	</div>   
+
+    <ng-template #hintTermin><div class="text-left" [innerHtml]="'ZADANI.TERMIN.HINT' | translate"></div></ng-template>
+	<div class="form-group row">
+		<label class="{{ layout.grid.z_label }} col-form-label"
+			placement="right auto"
+            triggers="mouseenter:mouseleave"
+            [tooltip]="('ZADANI.TERMIN.HINT' | translate) === '' ? '' : hintTermin">
+            {{ 'ZADANI.TERMIN.LABEL' | translate }}
+            <i *ngIf="('ZADANI.TERMIN.HINT' | translate) !== ''" class="far fa-question-circle label-hint"></i>
+		</label>		
+		<div class="{{ layout.grid.z_input }}">
+			<div class="input-group">
+				<input name="termin" class="form-control" type="text" placeholder="{{ 'ZADANI.TERMIN.PLACEHOLDER' | translate }}" 
+					bsDaterangepicker
+                    [bsConfig]="bsConfig"
+					[minDate]="minDate"
+					[maxDate]="maxDate"
+					[(ngModel)]="data.termin"
+					(bsValueChange)="ZmenaData($event)"
+					#Termin="ngModel" #drp="bsDaterangepicker" required autocomplete="off" />
+				<div class="input-group-append" (click)="drp.show()">
+					<span class="input-group-text"><i class="fa fa-calendar"></i></span>
+				</div>
+			</div>	
+		</div>
+		<small [hidden]="Termin.valid || (!submitted)" class="text-danger {{ layout.grid.z_offset }} {{ layout.grid.z_input }}">
+			{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+		</small>	
+	</div>
+
+	<ng-template #hintTyp><div class="text-left" [innerHtml]="'ZADANI.TYP.HINT' | translate"></div></ng-template>
+	<div class="form-group row">
+		<label class="{{ layout.grid.z_label }} col-form-label"
+			placement="right auto"
+			triggers="mouseenter:mouseleave"
+			[tooltip]="('ZADANI.TYP.HINT' | translate) === '' ? '' : hintTyp">
+            {{ 'ZADANI.TYP.LABEL' | translate }}
+            <i *ngIf="('ZADANI.TYP.HINT' | translate) !== ''" class="far fa-question-circle label-hint"></i>
+		</label>
+		<div class="{{ layout.grid.z_input }}">   		
+			<div class="btn-group btn-group-toggle" data-toggle="buttons">
+				<label class="btn btn-outline-primary" [class.active]="data.typ === 'tur'">
+					<input name="typ" [(ngModel)]="data.typ" value="tur" type="radio" required />
+					{{ 'ZADANI.TYP.TUR' | translate }}
+				</label>
+				<label class="btn btn-outline-primary" [class.active]="data.typ === 'pra'">
+					<input name="typ" [(ngModel)]="data.typ" value="pra" type="radio" />
+					{{ 'ZADANI.TYP.PRA' | translate }}
+				</label>
+			</div>
+		</div>   		
+	</div>
+
+    <ng-template #hintSporty><div class="text-left" [innerHtml]="'ZADANI.SPORTY.HINT' | translate"></div></ng-template>
+	<div class="form-group row">
+		<label class="{{ layout.grid.z_label }} col-form-label"
+			placement="right auto"
+			triggers="mouseenter:mouseleave"
+			[tooltip]="('ZADANI.SPORTY.HINT' | translate) === '' ? '' : hintSporty">
+            {{ 'ZADANI.SPORTY.LABEL' | translate }}
+            <i *ngIf="('ZADANI.SPORTY.HINT' | translate) !== ''" class="far fa-question-circle label-hint"></i>
+		</label>
+		<div class="{{ layout.grid.z_input }}">   		
+			<div class="btn-group btn-group-toggle" data-toggle="buttons">
+				<label class="btn btn-outline-primary" [class.active]="data.sporty === 0">
+					<input name="sporty" [(ngModel)]="data.sporty" [value]="0" type="radio" required />
+					{{ 'ZADANI.SPORTY.REK' | translate }}
+				</label>
+				<label class="btn btn-outline-primary" [class.active]="data.sporty === 1">
+					<input name="sporty" [(ngModel)]="data.sporty" [value]="1" type="radio" />
+					{{ 'ZADANI.SPORTY.ZIM' | translate }}
+				</label>
+				<label class="btn btn-outline-primary" [class.active]="data.sporty === 2">
+					<input name="sporty" [(ngModel)]="data.sporty" [value]="2" type="radio" />
+					{{ 'ZADANI.SPORTY.RIZ' | translate }}
+				</label>
+			</div>
+		</div>   		
+	</div>
+
+    <ng-template #hintPocetOsob><div class="text-left" [innerHtml]="'ZADANI.POCETOSOB.HINT' | translate"></div></ng-template>    
+	<div class="form-group row">
+		<label class="{{ layout.grid.z_label }} col-form-label"
+			placement="right auto"
+			triggers="mouseenter:mouseleave"		
+			[tooltip]="('ZADANI.POCETOSOB.HINT' | translate) === '' ? '' : hintPocetOsob">
+            {{ 'ZADANI.POCETOSOB.LABEL' | translate }}
+            <i *ngIf="('ZADANI.POCETOSOB.HINT' | translate) !== ''" class="far fa-question-circle label-hint"></i>
+		</label>		
+		<div class="col-sm-6 col-sm-4 col-lg-2">
+			<div class="input-group">
+				<div class="input-group-prepend" (click)="PocetOsob(data.pocet_osob-1)">
+					<span class="input-group-text"><i class="fa fa-minus"></i></span>
+				</div>				
+				<input name="pocet_osob" class="form-control pr-4 text-right" type="text" [(ngModel)]="data.pocet_osob" (change)="PocetOsob(0)"
+					#Pocet_osob="ngModel" placeholder="{{ 'ZADANI.POCETOSOB.PLACEHOLDER' | translate }}" required autocomplete="off" />
+				<div class="input-group-append" (click)="PocetOsob(data.pocet_osob+1)">
+					<span class="input-group-text"><i class="fa fa-plus"></i></span>
+				</div>
+			</div>	
+		</div>
+		<small [hidden]="Pocet_osob.valid || (Pocet_osob.pristine && !submitted)" class="text-danger {{ layout.grid.z_offset }} {{ layout.grid.z_input }}">
+			{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+		</small>	
+	</div>
+
+    <ng-template #hintRodina><div class="text-left" [innerHtml]="'ZADANI.RODINA.HINT' | translate"></div></ng-template>    
+	<div *ngIf="data.pocet_osob>1" class="form-group row">
+		<label class="{{ layout.grid.z_label }} col-form-label"
+			placement="right auto"
+			triggers="mouseenter:mouseleave"
+			[tooltip]="hintRodina">
+            {{ 'ZADANI.RODINA.LABEL' | translate }}
+            <i *ngIf="('ZADANI.RODINA.HINT' | translate) !== ''" class="far fa-question-circle label-hint"></i>
+		</label>
+		<div class="{{ layout.grid.z_input }}">   		
+			<div class="btn-group btn-group-toggle" data-toggle="buttons">
+				<label class="btn btn-outline-primary" [class.active]="data.rodina === true">
+					<input name="rodina" [(ngModel)]="data.rodina" [value]="true" type="radio" required />
+					{{ 'FORM.ANO' | translate }}
+				</label>
+				<label class="btn btn-outline-primary" [class.active]="data.rodina === false">
+					<input name="rodina" [(ngModel)]="data.rodina" [value]="false" type="radio" />
+					{{ 'FORM.NE' | translate }}
+				</label>
+			</div>
+		</div>   		
+	</div>	
+
+    <ng-template #hintVekOsob><div class="text-left" [innerHtml]="'ZADANI.VEKOSOB.HINT' | translate"></div></ng-template>
+	<div class="form-group row">
+		<label class="{{ layout.grid.z_label }} col-form-label"
+			placement="right auto"
+			triggers="mouseenter:mouseleave"		
+			[tooltip]="('ZADANI.VEKOSOB.HINT' | translate) === '' ? '' : hintVekOsob">
+            {{ 'ZADANI.VEKOSOB.LABEL' | translate }}
+            <i *ngIf="('ZADANI.VEKOSOB.HINT' | translate) !== ''" class="far fa-question-circle label-hint"></i> 
+		</label>		
+		<div class="{{ layout.grid.z_input }} row">
+
+			<div *ngFor="let item of data.osoby; let i = index;" class="col-md-6 col-sm-12 mb-2">
+				<input id="osoby[{{i}}]" name="osoby[{{i}}]" class="form-control text-right" type="number" placeholder="{{ 'ZADANI.VEKOSOB.PLACEHOLDER' | translate:{value: i+1} }}" 
+						[(ngModel)]="item.vek" #itemOsoby="ngModel" required />	
+				<small [hidden]="itemOsoby.valid || (itemOsoby.pristine && !submitted)" class="text-danger">
+					{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+				</small>
+			</div>
+
+		</div>
+		<small [hidden]="Pocet_osob.valid || (Pocet_osob.pristine && !submitted)" class="text-danger {{ layout.grid.z_offset }} {{ layout.grid.z_input }}">
+			{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+		</small>	
+	</div>
+
+    <ng-template #hintStorno><div class="text-left" [innerHtml]="'ZADANI.STORNO.HINT' | translate"></div></ng-template>
+	<div class="form-group row">
+		<label class="{{ layout.grid.z_label }} col-form-label"
+			placement="right auto"
+			triggers="mouseenter:mouseleave"		
+			[tooltip]="('ZADANI.STORNO.HINT' | translate) === '' ? '' : hintStorno">
+            {{ 'ZADANI.STORNO.LABEL' | translate }}
+            <i *ngIf="('ZADANI.STORNO.HINT' | translate) !== ''" class="far fa-question-circle label-hint"></i>
+		</label>		
+		<div class="col-sm-4 col-lg-4">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<input type="checkbox" name="storno" value="on" #Storno="ngModel" [(ngModel)]="data.storno">
+					</span>
+				</div>				
+				<input name="storno_cena" class="form-control pr-2 text-right" type="text" [(ngModel)]="data.storno_cena" [attr.disabled]="Storno.value ? null : ''" [required]="Storno.value ? true : null"
+					#Storno_cena="ngModel" placeholder="{{ 'ZADANI.STORNO.PLACEHOLDER' | translate }}" telefonFormat autocomplete="off" />
+				<div class="input-group-append">
+					<span class="input-group-text">{{ 'FORM.KC' | translate }}</span>
+				</div>
+			</div>	
+		</div>
+		<small [hidden]="!Storno.value || Storno_cena.valid || (Storno_cena.pristine && !submitted)" class="text-danger {{ layout.grid.z_offset }} {{ layout.grid.z_input }}">
+			{{ 'FORM.VALIDATION.REQUIRED' | translate }}
+		</small>	
+	</div>	
+
+</fieldset>

@@ -1,0 +1,93 @@
+<div id="srovnani">
+<div class="row">
+	<div class="col">
+
+		<!-- šablona detail -->
+		<div [@list]="offers.length" *ngIf="!layout.table">
+		</div>
+		
+		<!-- šablona tabulka validní -->
+		<div *ngIf="offers.length">
+		
+		<div [@list]="offers.length" *ngIf="layout.table" class="card table">
+			<div class="card-header">
+				<div class="row align-items-center">
+					<div class="col-5 col-lg-2 pl-0 pr-0 row">
+						<div class="col-12">{{ 'SROVNANI.PARTNER' | translate }}</div>
+					</div>
+					<div class="col-12 col-lg-7 order-3 order-lg-2 mt-2 pl-0 pr-0 row">
+						<div class="col text-right"
+							placement="top auto"
+							triggers="mouseenter:mouseleave"
+							tooltip="{{ 'SROVNANI.LV.HINT' | translate }}">
+							{{ 'SROVNANI.LV.TITLE' | translate }}</div>
+						<div class="col text-right"
+							placement="top auto"
+							triggers="mouseenter:mouseleave"
+							tooltip="{{ 'SROVNANI.ZAV.HINT' | translate }}">
+							{{ 'SROVNANI.ZAV.TITLE' | translate }}</div>
+						<div class="col text-right"
+							placement="top auto"
+							triggers="mouseenter:mouseleave"
+							tooltip="{{ 'SROVNANI.UR.HINT' | translate }}">
+							{{ 'SROVNANI.UR.TITLE' | translate }}</div>
+						<div class="col text-right"
+							placement="top auto"
+							triggers="mouseenter:mouseleave"
+							tooltip="{{ 'SROVNANI.ODP.HINT' | translate }}">
+							{{ 'SROVNANI.ODP.TITLE' | translate }}</div>							
+					</div>
+					<div class="col-7 col-lg-3 order-2 order-lg-3 pl-0 pr-0 row">
+						<div class="hidden-xs-down text-center ml-4" [innerHTML]="'SROVNANI.CENATITLE' | translate:{dnu: data.pocet_dnu, osob: data.osoby.length}"></div>
+						<div class="visible-xs text-center ml-4" [innerHTML]="'SROVNANI.CENA' | translate"></div>
+					</div>						
+				</div>
+			</div>
+			<div class="card-body">
+				<div @items *ngFor="let r of offers" class="row partner align-items-center">
+					<div class="col-5 col-lg-2 pl-0 pr-0 row align-items-center">
+						<div class="col-12"><img src="{{ LOGA[r.pojistovna] }}" style="max-height:60px;" alt="{{ r.pojistovna }}" /></div>
+					</div>
+					<div class="col-12 col-lg-7 order-3 order-lg-2 pl-0 pr-0 row align-items-center">
+						<div class="col text-right"
+								placement="top auto"
+								triggers="mouseenter:mouseleave"
+								tooltip="{{ 'SROVNANI.LV.HINT' | translate }}">						
+							<span [outerHTML]="r.params.lvl.hodnota | menaFormat"></span>
+						</div>
+						<div class="col"
+								placement="top auto"
+								triggers="mouseenter:mouseleave"
+								tooltip="{{ 'SROVNANI.ZAV.HINT' | translate }}">
+							<span [outerHTML]="r.params.zavl.hodnota | menaFormat"></span>
+						</div>
+						<div class="col"
+								placement="top auto"
+								triggers="mouseenter:mouseleave"
+								tooltip="{{ 'SROVNANI.UR.HINT' | translate }}">								
+							<span [outerHTML]="r.params.urtn.hodnota | menaFormat"></span>
+						</div>
+						<div class="col"
+								placement="top auto"
+								triggers="mouseenter:mouseleave"
+								tooltip="{{ 'SROVNANI.ODP.HINT' | translate }}">
+							<span [outerHTML]="r.params.odpz.hodnota | menaFormat"></span>
+						</div>
+					</div>								
+					<div class="col-7 col-lg-3 order-2 order-lg-3 p-0 row align-items-center">
+						<div class="col text-right pl-0 cena vag"><span [outerHTML]="r.cena | menaFormat"></span></div>
+						<div class="col text-right">
+							<a class="btn btn-success" (click)="GAEvent('CEST', r.pojistovna, 'Proklik na sjednani', r.cena);" href="{{r.link}}" target="_onlinesjed{{r.kalk}}">
+								{{ 'FORM.BUTTONS.SJEDNAT' | translate }}
+								<i class="fa fa-chevron-right"></i>
+							</a>
+						</div>
+					</div>										
+				</div>
+			</div>
+		</div>
+		</div>
+
+	</div>
+</div>
+</div>
