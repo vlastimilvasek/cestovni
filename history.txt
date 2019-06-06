@@ -1,0 +1,433 @@
+gulp bulid
+gulp build
+cordova run android
+cordova platform add android --save
+cd D:
+cd mobile
+cd ionic
+ionic start pouchdb-ionic-hello-world
+bower install --save pouchdb
+cordova platform add android
+cd pouchdb-ionic-hello-world
+ionic run android
+cd Dokumenty
+cd 'Visual Studio 2015'
+cd projects
+cd Cordova-sqlite-bootstrap
+cordova plugin add cordova-sqlcipher-adapter --save
+cordova prepare
+cordova plugin add cordova-plugin-whitelist --save
+cd Cordova-sqlite-crypted
+cd  Ionic2Preview
+ionic serve
+git clone git@github.com:driftyco/ionic-preview-app.git
+sudo git clone git@github.com:driftyco/ionic-preview-app.git
+git clone https://github.com/driftyco/ionic-preview-app.git
+cd  ionic-preview-app
+npm install -g ionic
+npm install -g cordova
+ionic build
+cordova add platform android
+ionic platform add android
+ionic run
+cd bin
+ac Android
+cd Android
+cd Debug
+ionic build android
+cd C:/Users/Vlastik/Documents/Visual Studio 2015/projects/ionic-preview-app/platforms/android/build/outputs/apk/
+cd platforms/android/build/outputs/apk/
+ionic start todo IonicBlankApp
+ionic start IonicToDoApp todo
+cd IonicToDoApp
+ionic start --list
+ionic start --list --v1
+keytool
+cd jBackApp
+bower install ionic-filter-bar
+cd ionic-filter-bar
+cd demo
+bower insatll
+bower install
+gulp
+D:
+cd D
+cd /D
+npm install express --save
+npm install express-session
+cd D.
+cd mobile/server
+npm install connect
+mysql -u root -e "create ionic-login"
+mysql -u root -e "create database ionic-login"
+"c:\xampp\mysql\bin\mysql" -u root -e "create database ionic-login"
+c:\xampp\mysql\bin\mysql -u root -e "create database ionic-login"
+npm install mysql
+npm install sequelize
+npm install --save mysql
+npm start
+npm install -g ios-sim
+npm install --global --production windows-build-tools
+cd m
+node-sass
+npm rebuild node-sass
+npm install node-gyp@latest
+cd 'C:\Program Files\nodejs\node_modules\'
+cd npmOLD
+node-gyp -v
+npm install -g node-gyp@latest
+npm config set msvs_version=2015 --global
+npm install node-sass -g
+npm install -g n
+npm install -g gulp-sass
+rm node_modules
+cd www
+cordova platform ls
+cordova emulate android
+ionic resouces
+ionic resources
+ionic resources --icon
+cd "Visual Studio 2015"
+bower install angular-translate 
+cd resources
+ionic platform add ios
+cd 'Visual Studio 2016'
+cd Projekty
+cd Projects
+cd ionic-image
+npm i cordova-plugin-save-image
+ionic emulate ios
+ionic plugin
+cd Fotky
+cd  'Děda 70'
+touch -d '20 February 2017' *
+D:/
+D:ls
+cd D:/localhost
+cd ruian
+import_ruian.sh
+sh import_ruian.sh
+cd D./localhost/ruian
+cd D:/localhost/ruian
+mysql
+sh import_vazby.sh
+composer require slim/slim "^3.0"
+composer require slim/slim "^3.0"exit
+wget
+wget.exe
+unzip
+mysql -u root -p ruian < ruian_init.sql
+mysql -u ruian -p ruian ruian < ruian_init.sql
+mysql -u ruian -p ruian ruian
+mysql -u ruian -p ruian
+mysql -u root
+mysql -u ruian
+mysql -u ruian -pruian
+mysql -u ruian -pruian ruian < ruian_init.sql
+sh kod.sh
+mysql --local_infile=1 -u ruian -pruian ruian < r.sql
+mysql --local_infile=1 -u ruian -pruian ruian < ruian_init_vazby.sql
+d:
+D.
+D:cd D:
+cd d:\
+cd D:/
+npm install bootswatch
+cd Bootstrap4
+cd bootswatch
+npm install bootstrap@4.0.0-beta.2
+gem install bundler
+bundle install
+npm run
+npm run dist
+sudo chown -R $USER:$(id -gn $USER) C:\Users\Vlastik\.config
+npm run docs-serve
+cd..
+mkdir boo4themes
+cd book4themes
+mkdir boot4themes
+cd boot4themes
+npm int
+npm init
+npm install bootstrap@4.0.0-beta.2 --save
+npm install jquery@1.9
+npm install popper,js
+npm install popper.js
+npm install gulp browser-sync gulp-sass --save-dev
+cd Dokumenty/Angular
+cd  ngx-bootstrap-demo
+ng serve --port 5100
+wget --help
+cd Downloads
+wget -q --show-progress http://vdp.cuzk.cz/vymenny_format/csv/vfr2ADcsv.xsl
+cd d:\localhost\ruianD:
+cd \localhost\ruian\
+cd /localhost/ruian
+cd localhost
+import_ruian
+ng new pdfmake-demo
+cd pdfmake-demo
+npm install pdfmake --save
+npm install --save classlist.js
+cd odpovednost
+git status
+git add *
+git commit -m "Výpočet obou druhů ODP, uložení PDF, filtry"
+git push
+cd _githubio
+cd vlastimilvasek.github.io
+git commit -m "odpovednost: Výpočet obou druhů ODP, uložení PDF, filtry"
+cd ngx-bootstrap-demo
+npm --help
+npm v
+npm list
+ng new ng-pdf
+cd _githubio\vlastimilvasek.github.io
+cd _githubio/vlastimilvasek.github.io
+git commit -m "odpovednost: Update verze balíčků, funkčnost v IE"
+git commit -m "odpovednost: vylepšené srovnání, změna četnosti plateb"
+cd Documents\Angular\_githubio\vlastimilvasek.github.io\odpovednost\
+cd \Documents\Angular\_githubio\vlastimilvasek.github.io\odpovednost\
+cd Documents/Angular/_githubio/vlastimilvasek.github.io
+git commit -m "update odpovednost a nove hypoteky"
+D://
+D
+cd Zaloha_SQL
+mysql --max_allowed_packet=200M -u root srovnavac < dump.sql
+ng build -prod
+npm un -S ngx-bootstrap
+ncu
+ncu -u
+npm install npm-check-updates
+npm upgrade
+node -v
+npm -v
+npm install -g npm@latest
+sudo npm install -g npm@latest
+ng new ngx-bootstrap-demo7
+ng new ngx-bootstrap-demo7 --directory ./
+ng new ngx-bootstrap-demo7 --directory ./ngx-bootstrap-demo7
+cd ./ngx-bootstrap-demo7
+ng serve --port 4500 --open
+nmp i ngx-bootstrap
+npm i @ng-select/ng-select
+npm install @angular/cli --save
+ng new hypoteky7
+npm install ngx-bootstrap --save
+npm install @ngx-translate/core --save
+npm i ngx-select-ex --save
+npm install @ngx-translate/http-loader --save
+npm install @nicky-lenaers/ngx-scroll-to
+history -w ~/history.txt
+history
+history -w ./history.txt
+ng -v
+npm install -g @angular/core@7.1.0
+npm install @angular/core@7.1.0
+npm install @angular/cli@7.1.0
+ng update @angular/core --force
+ng init
+ng u
+ng update @ng-bootstrap
+ng update @ng-bootstrap/ng-bootstrap
+ng update codelyzer
+npm install -g @angular/core
+npm uninstall -g angular-cli
+npm cache clean or npm cache verify
+npm install -g @angular/cli@latest
+ng i @angular/core
+npm i @angular/core
+ng xi18n
+ng sere
+ ng
+ng new produkty7
+ls
+cd hypoteky7
+ng serve --port 4600
+ng serve --port 500
+npm uninstall classlist.js --save
+npm cache verify
+npm install classlist.js --save
+npm uninstall web-animations-js --save
+npm install web-animations-js --save
+ng serve --port 5000
+cd hypoteky
+git commit -m "předprodukční verze, ng7, datově přes www.hypozor.cz"
+git commit -m "oprava basehref"
+git commit -m "funkční verze s ng7"
+git remote add origin https://github.com/vlastimilvasek/hypoteky7.git
+git push -u origin master
+cd odpovednost7
+npm list --depth=0
+ng update  @nicky-lenaers/ngx-scroll-to
+ng rm @nicky-lenaers/ngx-scroll-to
+npm install -g npm-gui
+npm install @angular/core@7.0.3 -S
+npm uninstall @nicky-lenaers/ngx-scroll-to
+cd cestovni
+ls -a
+ng new help
+ng new --force
+ng test
+ng update @angular/cli
+java version
+java -version
+ng serve --open
+nc version
+ng i @angular/cli
+ng install
+npm update -g @angular/cli
+npm install @angular/cli
+ng new -help
+ng new --help
+rm router
+ng -g update
+ng new
+ng new router
+ng serve -port 4300
+npm uninstall -g @angular/cli
+npm update @angular/cli
+npm install -g @angular/cli@7.0.5
+ng new router --routing
+cd router
+ng generate component second
+ng new component filtry
+ng add component filtry
+cd Documents
+cd Angular
+git commit -m "Přidána cestovka"
+git commit
+npm install ngx-bootstrap@3.1.2 -S" in "C:\Users\Vlastik\Documents\Angular\cestovni
+npm-gui localhost:9000
+npm install -g @angular/cli
+npm install  @angular/cli
+npm install ngx-bootstrap@3.1.2
+npm install rxjs@6.3.3
+npm install @nicky-lenaers/ngx-scroll-to@1.1.1
+npm install pdfmake@0.1.39
+npm install ng-select@1.0.1
+npm install -g rxjs-tslint
+rxjs-5-to-6-migrate -p src/tsconfig.app.json
+ng serve
+npm install @ngx-translate/core@11.0.1
+npm install @ngx-translate/http-loader@4.0.0
+ng update ngx-bootstrap
+ng update @ngx-translate/core
+npm install ngx-select-ex
+ng g c filtry
+ng generate p spol-format --flat
+ng serve --4500
+ng serve port--4500
+ng serve port --4500
+ng serve --port 4500
+npm install -g npm
+ng serve --port 4400
+ng update @angular/cli
+ng update @angular/core
+npm list -g --depth=0
+npm list  --depth=0
+npm i @nicky-lenaers/ngx-scroll-to
+npm i ngx-select-ex
+npm i @ngx-translate/core
+npm i ngx-bootstrap
+npm i @types/node
+ng version
+ng update webpack-dev-server
+ng g component kloader --export=true
+ng g component pojisteny --export=true
+ng g component produktinfo --export=true
+cd \D
+cd d:\localhost\ruian\
+cd \d\localhost\ruian\
+cd /d/localhost/ruian/
+ng g component rekapitulace --export=true
+ng g component zaver --export=true
+ng g pipe mena-format-info --flat --export=true
+ng g service data --flat --export=true
+cd c:\Users\Vlastik\Documents\Angular\_githubio\vlastimilvasek.github.io\odpovednost\
+cd /Users/Vlastik/Documents/Angular/_githubio/vlastimilvasek.github.io/odpovednost
+cd /Users/
+cd \Users
+cd /d/localhost
+cd /c/Users/Vlastik/Documents/Angular/_githubio/vlastimilvasek.github.io/odpovednost
+git commit -m "uprava odpovednosti"
+exit
+cd ../vozidla
+ng g c objekt
+ng g p _pipes/tips --flat false
+cd /c/Users/Vlastik/Documents/Angular/_githubio/vlastimilvasek.github.io/vozidla
+cd ..
+cd vozidla
+ng --help
+ng v
+ng help update
+ng update
+ng update --all
+ng help
+npm help
+npm help version
+npm help list
+npm  list
+npm help update
+npm update ngx-bootstrap
+npm update
+npm update --force
+npm-gui help
+npm u @angular/cli
+npm un @angular/cli
+npm chache clean
+npm help cache
+npm cache clean
+npm u @angular/cli@7.2.15
+npm i @angular/cli@7.2.15
+npm i @angular/cli
+npm u @angular/animations
+npm un @angular/animations
+npm un @angular/platform-browser
+npm i @angular/platform-browser@7.2.15
+npm i @angular/core@7.2.15
+npm u @angular/core @angular/common
+npm un @angular/core @angular/common
+npm i @angular/core@7.2.15 @angular/common@7.2.15
+npm i @angular/languaage-service@7.2.15
+npm i @angular/language-service@7.2.15
+npm-gui
+npm u ngx-bootstrap
+npm un ngx-bootstrap
+npm i ngx-bootstrap@4.1.1
+npm i zone.jsap@0.8.25
+npm i zone.js@0.8.25
+npm i zone.js@0.8.26
+npm i zone.js@0.8.29
+npm audit fix --force
+npm i ts-node@8.1.0
+npm i tslint@5.16.0
+npm i codelyzer@5.0.1 jasmine-core@3.4.0
+npm i karma-jasmine@2.0.1 karma-jasmine-html-reporter@1.4.2
+npm i @types/jasmine@6.5.2 @types/node@3.3.12
+npm i @types/jasmine@3.3.12 @types/node@12.0.2
+npm un rxjs
+npm i rxjs@6.5.2 typescript@3.4.5
+npm install
+ng update @angular/cli @angular/core
+npm un @angular/cli @angular/core
+npm i @angular/cli@latest @angular/core@latest
+npm i @angular/animations
+npm un typescript
+npm i typescript@3.2
+npm i
+ng serve --port 4200
+npm outdated
+npm i ngx-bootstrap ngx-select-ex @nicky-lenaers/ngx-scroll-to @ngx-translate
+npm i ngx-bootstrap ngx-select-ex @nicky-lenaers/ngx-scroll-to @ngx-translate/core
+npm i braces@latest
+npm asudit
+npm i @ngx-translate/http-loader
+ng serve --port 4300
+ng build --prod
+git init
+git remote add origin https://github.com/vlastimilvasek/cestovni.git
+npm install --save-dev angular-ide@0.9.63
+npm audit fix
+npm audit
+history -w history.txt
