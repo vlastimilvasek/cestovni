@@ -18,8 +18,6 @@ export class ZadaniComponent implements OnInit {
     @Input() layout;
     @Input() lists;
 
-    @ViewChild('zadani') poj_input: any;
-
     constructor(private localeService: BsLocaleService) { }
 
     locale = 'cs';

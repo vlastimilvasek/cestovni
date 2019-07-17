@@ -1,0 +1,24 @@
+// Use IntelliSense to learn about possible attributes.
+// Hover to view descriptions of existing attributes.
+// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+{
+  "version": "0.2.0",
+  "configurations": [
+
+    {
+      "name": "Launch Chrome localhost (1)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9223,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://localhost:4200/?id\u003dCEST5d2f00eeb54fc2.02549658"
+    }, {
+      "name": "Launch Chrome cestovni8 on Angular CLI Server",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9225,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://localhost:4200/#"
+    }
+  ]
+}

@@ -101,9 +101,20 @@
 	    "TITLE": "Srovnání cestovního pojištění",
 	    "BACK": "Upravit zadání",
 	    "ALERT": "Srovnání předpokládá optimální výši zabezpečení zástavou a dostatečnou bonitu žadatele. Ověřte:",    
-	    "CLOSE": "Zavřít",
-        "PARTNER": "Partner",
-        "KALKULUJI": "Počítám nabídky cestovního pojištění. Prosím o chvilku strpení.",      
+	    "CLOSE": "Skrýt",
+		"PARTNER": "Partner",
+		"TOPPED": "Doporučujeme",		
+        "PRODUKT": {
+        	"TITLE": "Produkt",
+        	"HINT": ""
+        },
+		"INFO": {
+        	"TITLE": "Více informací",
+            "HINT": "Kliknutím na řádek zobrazíte detailní informace o produktu včetně pojistných podmínek.",
+            "SHOW": "Detail"
+		},
+		"KALKULUJI": "Počítám nabídky cestovního pojištění. Prosím o chvilku strpení.",
+		"DOKUMENTY": "Dokumenty",		      
         "FILTRY": {
         	"HINT": "pro lepší orientaci v nabídkách si můžete vyfiltrovat jen ty odpovídající Vašim potřebám."
 		},
@@ -134,8 +145,11 @@
 		"PARTNERS": "Pojišťovny",
     	"SELECT_ALL": "Vybrat vše",
 		"MUSTHAVE": "Nabídka musí obsahovat",									    	
-		"ZAV": "pojištění zavazadel",
-		"URAZ": "úrazové pojištění",
-		"ODP": "pojištění odpovědnosti"				
+		"MIN_LIMITS": "Minimální limit plnění",
+		"LV": "Léčebné výlohy",
+		"ZAV": "Pojištění zavazadel",
+		"URAZ": "Úrazové pojištění",
+        "ODP": "Pojištění odpovědnosti",
+        "AUTO": "Autopojištění"
     }          
 }

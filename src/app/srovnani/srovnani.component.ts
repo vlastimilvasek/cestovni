@@ -38,7 +38,7 @@ import * as pdfSrovnani from '../_pdf-templates/srovnani';
 export class SrovnaniComponent implements OnInit {
     @Input() offers;
     @Input() filters;
-    @Input() nvoffers;
+    @Input() topped;
     @Input() data;
     @Input() layout;
     @Input() staticTabs;

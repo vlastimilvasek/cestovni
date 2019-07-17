@@ -28,8 +28,10 @@ import { AppComponent } from './app.component';
 import { KeysPipe } from './_pipes/keys.pipe';
 import { ProcentoFormatPipe } from './_pipes/procento-format.pipe';
 import { TelefonFormatPipe } from './_pipes/telefon-format.pipe';
+import { MenaFormatInfoPipe } from './_pipes/mena-format-info.pipe';
 import { MenaFormatPipe } from './_pipes/mena-format.pipe';
 import { StarPipe } from './_pipes/star.pipe';
+import { TipsPipe } from './_pipes/tips.pipe';
 
 import { RCValidator } from './_directives/RC.validator';
 import { ICValidator } from './_directives/IC.validator';
@@ -63,9 +65,11 @@ const CustomSelectOptions: INgxSelectOptions = {
     TelefonFormatterDirective,
     ZadaniComponent,
     SrovnaniComponent,
-    MenaFormatPipe,
+	MenaFormatPipe,
+	MenaFormatInfoPipe,
     ProcentoFormatPipe,
-    StarPipe,
+	StarPipe,
+    TipsPipe,	
     FiltryComponent
   ],
   imports: [

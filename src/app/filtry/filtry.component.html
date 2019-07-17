@@ -23,29 +23,35 @@
 	<div class="col-12 col-md-6">
 
 		<div *ngIf="data.pojisteni == 'CEST';">
-			<h5 class="card-title">{{ 'FILTRY.MUSTHAVE' | translate }}</h5>
-
+			<h5 class="card-title">{{ 'FILTRY.MIN_LIMITS' | translate }}</h5>
+			{{ 'FILTRY.LV' | translate }}
+			<span class="float-right">{{ lvl.value | telefonFormat }} {{ 'FORM.KC' | translate }}</span>
+			<div>
+				<input #lvl name="lvl" type="range" [(ngModel)]="filters.lvl" min="0" max="30000000" step="2000000">
+			</div>
+			{{ 'FILTRY.ODP' | translate }}
+			<span class="float-right">{{ odpz.value | telefonFormat }} {{ 'FORM.KC' | translate }}</span>
+			<div>
+				<input #odpz name="odpz" type="range" [(ngModel)]="data.extra.odpz" min="0" max="10000000" step="1000000">
+			</div>
+			{{ 'FILTRY.URAZ' | translate }}
+			<span class="float-right">{{ uraz.value | telefonFormat }} {{ 'FORM.KC' | translate }}</span>
+			<div>
+				<input #uraz name="urtn" type="range" [(ngModel)]="data.extra.urtn" min="0" max="1000000" step="50000">
+            </div>
+			{{ 'FILTRY.ZAV' | translate }}
+			<span class="float-right">{{ zav.value | telefonFormat }} {{ 'FORM.KC' | translate }}</span>
+			<div>
+				<input #zav name="zavl" type="range" [(ngModel)]="data.extra.zavl" min="0" max="100000" step="5000">
+            </div>
 			<div class="custom-control custom-checkbox mb-2">
-				<input class="custom-control-input" id="min_zavl" name="min_zavl" [(ngModel)]="filters.min_zavl" value="1" type="checkbox" />
-				<label class="custom-control-label" for="min_zavl">
-					{{ 'FILTRY.ZAV' | translate }} 
+				<input class="custom-control-input" id="auto" name="auto" [(ngModel)]="data.extra.auto" value="1" type="checkbox" />
+				<label class="custom-control-label" for="auto">
+					{{ 'FILTRY.AUTO' | translate }} 
 				</label>
 			</div>
-
-			<div class="custom-control custom-checkbox mb-2">
-				<input class="custom-control-input" id="min_urtn" name="min_urtn" [(ngModel)]="filters.min_urtn" value="1" type="checkbox" />
-				<label class="custom-control-label" for="min_urtn">
-					{{ 'FILTRY.URAZ' | translate }} 
-				</label>
-			</div>
-
-			<div class="custom-control custom-checkbox mb-2">
-				<input class="custom-control-input" id="min_odpz" name="min_odpz" [(ngModel)]="filters.min_odpz" value="1" type="checkbox" />
-				<label class="custom-control-label" for="min_odpz">
-					{{ 'FILTRY.ODP' | translate }} 
-				</label>
-			</div>
-		</div>		
+                        
+        </div>		
 		
 	</div>
 </div>

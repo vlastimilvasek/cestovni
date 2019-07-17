@@ -135,7 +135,7 @@
 			</div>
 		</div> 	
   		    	
-     	<app-srovnani #s [staticTabs]="staticTabs" [layout]="layout" [data]="data" [nvoffers]="nvoffers" [(offers)]="offers" [(filters)]="filters"></app-srovnani>
+     	<app-srovnani #s [staticTabs]="staticTabs" [layout]="layout" [data]="data" [topped]="topped" [(offers)]="offers" [(filters)]="filters"></app-srovnani>
     </tab>
 
     <tab [disabled]="true">
@@ -237,6 +237,13 @@
 				    </tab>
 				</tabset>
 			</tab>
+         	<tab heading="Produkty - topped">
+		      	<tabset #toopedTabs type="tabs" [justified]="true">
+				    <tab *ngFor="let r of topped" heading="{{ r.produkt }}">
+						<pre>{{r | json}}</pre>
+				    </tab>
+				</tabset>
+			</tab>			
 			<tab heading="Filtry">
 				<pre>{{ filters | json }}</pre>
 			</tab>
