@@ -123,7 +123,7 @@
 						<span [outerHTML]="r.params.lvl.hodnota | menaFormat"></span>
 					</div>
 					<div class="col-2 text-center hidden-sm-down"><i class="fas fa-chevron-down"></i>&nbsp;<small>{{ 'SROVNANI.INFO.SHOW' | translate }}</small></div>
-					<div class="col col-md-2 text-right pl-0 cena vag"><span [outerHTML]="r.cena | menaFormat"></span></div>
+					<div class="col col-md-2 text-right pl-0 cena vag"><span [innerHTML]="r.cena | menaFormat"></span></div>
 					<div class="col col-md-2 text-right">
 						<a class="btn btn-success" (click)="GAEvent('CEST', r.pojistovna, 'Proklik na sjednani', r.cena);" href="{{r.link}}" target="_onlinesjed{{r.kalk}}">
 							{{ 'FORM.BUTTONS.SJEDNAT' | translate }}

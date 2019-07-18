@@ -230,9 +230,9 @@
 				<pre>Platný email?: {{ kalk_email.valid | json }}</pre>
 				<pre>#kalk_email: {{ kalk_email.value | json }}</pre>
 			</tab> 			       
-         	<tab heading="Produkty - offers">
+         	<tab heading="Produkty - nvoffers">
 		      	<tabset #partneriTabs type="tabs" [justified]="true">
-				    <tab *ngFor="let r of offers" heading="{{ r.produkt }}">
+				    <tab *ngFor="let r of nvoffers" heading="{{ r.produkt }}">
 						<pre>{{r | json}}</pre>
 				    </tab>
 				</tabset>

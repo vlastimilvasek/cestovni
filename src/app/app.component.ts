@@ -170,7 +170,7 @@ export class AppComponent implements OnInit {
 
                     // kontrola připojištění - extra
                     const types = ['radio', 'select'];
-                    console.log('pocet extras : ', x.extra.length );
+                    // console.log('pocet extras : ', x.extra.length );
                     if (x.extra.length) {
                         const extra = x.extra.filter(e => types.indexOf(e.typ) >= 0);
                         x.extra = [];
@@ -290,21 +290,21 @@ export class AppComponent implements OnInit {
                                     if (typeof p === 'object' && p !== null) {
                                         const lkod = Object.keys(p)[0];
                                         x.params[lkod].hodnota = p[lkod];
-                                        console.log('APP filtruj_nabidky - opt linked : ', lkod + ' ' + p[lkod]);
+                                        // console.log('APP filtruj_nabidky - opt linked : ', lkod + ' ' + p[lkod]);
                                         if (Number(x.params[lkod].hodnota) < this.data.extra[lkod]) {
                                             // když hodnota provázaného parametru nesplňuje filtr, musím znova projít filtrováním
                                             extras.push(lkod);
-                                            console.log('APP filtruj_nabidky - nedostatečný opt linked : ', lkod + ' ' + p[lkod] + ' ' + this.data.extra[lkod]);
+                                            // console.log('APP filtruj_nabidky - nedostatečný opt linked : ', lkod + ' ' + p[lkod] + ' ' + this.data.extra[lkod]);
                                         } else {
                                             // když je hodnota OK, tak znova nechci procházet, byla by nastavena na default parametru
                                             extras = extras.filter(o => o !== lkod);
                                             // a dopočítám cenu - volba provázaného parametru buď podle hodnoty jeho filtru nebo odkazujícího parametru
                                             const lopt = x.params[lkod].options.filter(o => Number(o.value) >= Math.max(this.data.extra[lkod], p[lkod]))[0];
-                                            console.log('APP filtruj_nabidky - opt linked dopočítání ceny : ', lopt);
+                                            // console.log('APP filtruj_nabidky - opt linked dopočítání ceny : ', lopt);
                                             if (typeof lopt === 'object' && lopt !== null) {
                                                 pripojisteni[lkod] = Number(lopt.cena);
                                             }
-                                            console.log('APP filtruj_nabidky - opt linked pripojisteni : ', pripojisteni);
+                                            // console.log('APP filtruj_nabidky - opt linked pripojisteni : ', pripojisteni);
                                         }
                                     }
                                 });
@@ -318,17 +318,17 @@ export class AppComponent implements OnInit {
                 }
             }
             Object.keys(pripojisteni).forEach(key => { cena_pri += pripojisteni[key]; });
-            console.log('APP filtruj_nabidky - cena pripojisteni : ', x.id + ': ' + cena_pri);
-            console.log('APP filtruj_nabidky - ceny pripojisteni : ', pripojisteni);
+            // console.log('APP filtruj_nabidky - cena pripojisteni : ', x.id + ': ' + cena_pri);
+            // console.log('APP filtruj_nabidky - ceny pripojisteni : ', pripojisteni);
 
-            x.cena += cena_pri;
+            x.cena = x.platby[1] + cena_pri;
         });
         items = items.filter(x => Number(x.params.auto.hodnota) >= this.data.extra.auto);
 
         // console.log('offers po filtrech : ', this.offers);
         // function sortp(c) { return function(a, b) { return a.platby[c] - b.platby[c]; }; }
         // this.offers.sort(sortp(this.data.platba));
-        this.offers.sort(function(a, b) { return a.cena - b.cena; });
+        items.sort(function(a, b) { return a.cena - b.cena; });
         this.topped = items.filter(x => (x.top === true));
         this.offers = items.filter(x => (x.top === false));
     }
