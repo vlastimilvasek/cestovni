@@ -23,7 +23,7 @@
 						<img src="{{ LOGA[r.pojistovna] }}" class="img-fluid" style="max-height:60px;" alt="{{ r.pojistovna }}" />
 						<i class="fas fa-chevron-down hidden-md-up"></i>
 					</div>
-					<div class="col col-lg-2 hidden-sm-down vag"><span [outerHTML]="r.produkt"></span></div>
+					<div class="col col-lg-2 hidden-sm-down vag {{ r?.cssExtra }}"><span [outerHTML]="r.produkt"></span></div>
 					<div class="col-lg-2 hidden-md-down text-right"
 							placement="top auto"
 							triggers="mouseenter:mouseleave"
@@ -74,7 +74,8 @@
                                             <a class="" href="{{ dok.url }}" target="_pdf_dok"><span class="fa-li" ><i class="text-danger far fa-file-pdf"></i></span> {{ dok.nazev }}</a>
                                         </li>
                                     </ul>
-                                </div> 
+                                </div>
+                                <div class="hidden-md-down" [innerHTML]="r?.imgExtra"></div> 
                             </div>                        
 						</div>
 					</div>  
@@ -115,7 +116,7 @@
 						<img src="{{ LOGA[r.pojistovna] }}" class="img-fluid" style="max-height:60px;" alt="{{ r.pojistovna }}" />
 						<i class="fas fa-chevron-down hidden-md-up"></i>
 					</div>
-					<div class="col col-lg-2 hidden-sm-down vag"><span [outerHTML]="r.produkt"></span></div>
+					<div class="col col-lg-2 hidden-sm-down vag {{ r?.cssExtra }}"><span [outerHTML]="r.produkt"></span></div>
 					<div class="col-lg-2 hidden-md-down text-right"
 							placement="top auto"
 							triggers="mouseenter:mouseleave"

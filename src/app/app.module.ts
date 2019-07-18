@@ -49,7 +49,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 const CustomSelectOptions: INgxSelectOptions = {
     optionValueField: 'value',
-    optionTextField: 'label'
+    optionTextField: 'label',
+    keepSelectedItems: false
 };
 
 @NgModule({

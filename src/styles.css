@@ -1,0 +1,13 @@
+.razitkoAutem::after {
+    position: absolute;
+    content: '';
+    background-image: url(/assets/images/razitko-autem.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 140px;
+    height: 140px;
+    pointer-events: none;
+    top: -55px;
+}
+

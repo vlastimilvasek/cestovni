@@ -71,7 +71,7 @@ export class AppComponent implements OnInit {
     @ViewChild('layoutHelper', { static: true }) layout_helper: any;
     @ViewChild('stepTabs', { static: true }) staticTabs: TabsetComponent;
 
-    version = '1.0.6';
+    version = '1.1.0';
     aversion = require('../../package.json').version;
 
     @HostListener('document:keypress', ['$event'])

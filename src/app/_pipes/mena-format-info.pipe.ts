@@ -23,7 +23,7 @@ export class MenaFormatInfoPipe implements PipeTransform {
             if (!isNaN(Number(obj.hodnota))) {
                 const cislo = Math.round( Number(obj.hodnota || ''));
                 if (cislo > 1) {
-                    if (cislo === 999999) {
+                    if (cislo === 999999999) {
                         res = 'neomezeno';
                     } else if ((cislo % 1000000) === 0) {
                         res = (cislo / 1000000).toString() + '&nbsp;mil.&nbsp;Kč';

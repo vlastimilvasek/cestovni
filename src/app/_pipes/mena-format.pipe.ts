@@ -12,7 +12,7 @@ export class MenaFormatPipe implements PipeTransform {
         if (!isNaN(Number(value)) && Number(value)) {
             const cislo = Math.round( Number(value || ''));
             if (cislo > 0) {
-                if (cislo === 999999) {
+                if (cislo === 999999999) {
                     res = 'neomezeno';
                 } else if (false) {
 //                if ((cislo % 100000) === 0) {

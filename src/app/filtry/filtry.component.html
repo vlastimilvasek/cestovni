@@ -27,7 +27,7 @@
 			{{ 'FILTRY.LV' | translate }}
 			<span class="float-right">{{ lvl.value | telefonFormat }} {{ 'FORM.KC' | translate }}</span>
 			<div>
-				<input #lvl name="lvl" type="range" [(ngModel)]="filters.lvl" min="0" max="30000000" step="2000000">
+				<input #lvl name="lvl" type="range" [(ngModel)]="filters.lvl" min="0" max="15000000" step="1000000">
 			</div>
 			{{ 'FILTRY.ODP' | translate }}
 			<span class="float-right">{{ odpz.value | telefonFormat }} {{ 'FORM.KC' | translate }}</span>
@@ -37,12 +37,12 @@
 			{{ 'FILTRY.URAZ' | translate }}
 			<span class="float-right">{{ uraz.value | telefonFormat }} {{ 'FORM.KC' | translate }}</span>
 			<div>
-				<input #uraz name="urtn" type="range" [(ngModel)]="data.extra.urtn" min="0" max="1000000" step="50000">
+				<input #uraz name="urtn" type="range" [(ngModel)]="data.extra.urtn" min="0" max="600000" step="50000">
             </div>
 			{{ 'FILTRY.ZAV' | translate }}
 			<span class="float-right">{{ zav.value | telefonFormat }} {{ 'FORM.KC' | translate }}</span>
 			<div>
-				<input #zav name="zavl" type="range" [(ngModel)]="data.extra.zavl" min="0" max="100000" step="5000">
+				<input #zav name="zavl" type="range" [(ngModel)]="data.extra.zavl" min="0" max="50000" step="5000">
             </div>
 			<div class="custom-control custom-checkbox mb-2">
 				<input class="custom-control-input" id="auto" name="auto" [(ngModel)]="data.extra.auto" value="1" type="checkbox" />
