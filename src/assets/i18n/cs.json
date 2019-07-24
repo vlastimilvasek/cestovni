@@ -103,7 +103,9 @@
 	    "ALERT": "Srovnání předpokládá optimální výši zabezpečení zástavou a dostatečnou bonitu žadatele. Ověřte:",    
 	    "CLOSE": "Skrýt",
 		"PARTNER": "Partner",
-		"TOPPED": "Doporučujeme",		
+        "TOPPED": "Doporučujeme",
+        "FIRSTINFO": "Máme pro Vás zbrusu <strong>novou kalkulačku cestovního pojištění</strong>.<br />Srovnání nabízí všechny dostupné varianty, kliknutím na řádek zobrazíte detailní přehled produktu.<br />V záhlaví najdete užitečná tlačítka. Pomocí <strong>filtrů</strong> <a class=\"btn btn-outline-secondary btn-sm\"><i class=\"fas fa-ellipsis-v\"></i> Filtry </a> si najdete jen ty nabídky, které vyhovují Vašim požadavkům. <br />Pomocí <strong>Nástrojů</strong> <a class=\"btn btn-outline-secondary btn-sm\"><i class=\"fas fa-cog\"></i></a> si např. uložíte odkaz na Vaši kalkulaci.",
+        "FIRSTINFOBUTTON": "OK, mám to <i class=\"fas fa-times\"></i>",		
         "PRODUKT": {
         	"TITLE": "Produkt",
         	"HINT": ""

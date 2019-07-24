@@ -67,11 +67,19 @@ export class SrovnaniComponent implements OnInit {
         this.filters.partneri.forEach(x => this.filters.partnobj[x] = true);
     }
 
-    priprav_data(): void {
+    skryjNapovedu(): void {
+        this.layout.prvniNapoveda = false;
+        if (window.localStorage) {
+            localStorage.setItem('prvniNapoveda', 'false');
+        }
     }
 
     ngOnInit() {
-
+        this.layout.prvniNapoveda = true;
+        if (window.localStorage) {
+            this.layout.prvniNapoveda = (localStorage.getItem('prvniNapoveda') !== 'false');
+        }
+        console.log('SROVNANI - init ', this.layout.prvniNapoveda);
     }
 
 }

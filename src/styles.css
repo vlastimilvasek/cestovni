@@ -1,13 +1,51 @@
 .razitkoAutem::after {
+  position: absolute;
+  content: '';
+  background-image: url(./assets/images/razitko-autem.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 140px;
+  height: 140px;
+  pointer-events: none;
+  top: -55px
+}
+
+.produkt .img-fluid {
+  max-height: 60px
+}
+
+@media (max-width:767.98px) {
+  .razitkoAutemXs::after {
     position: absolute;
     content: '';
-    background-image: url(/assets/images/razitko-autem.svg);
+    background-image: url(./assets/images/razitko-autem.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-    width: 140px;
-    height: 140px;
+    width: 100px;
+    height: 100px;
     pointer-events: none;
-    top: -55px;
+    top: -25px;
+    right: -30px
+  }
 }
 
+@media (max-width:575.98px) {
+
+  .produkt,
+  .sjednat {
+    padding-left: 0 !important
+  }
+
+  .produkt .img-fluid {
+    max-width: 80%
+  }
+
+  .sjednat .btn {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem
+  }
+}

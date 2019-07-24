@@ -153,7 +153,7 @@ export class AppComponent implements OnInit {
                 const partnobj = {};
                 const partnobj_old = this.filters.partnobj || {};  // uchování nastavení při pře-kalkulaci
                 this.data.id = srovnani.id;
-                this.URL.adresa = window.location.origin + window.location.pathname + '/?id=' + srovnani.id;
+                this.URL.adresa = window.location.origin + window.location.pathname + '?id=' + srovnani.id;
 
                 this.kalk_aktivni = false;
                 // console.log('APP kalkuluj - srovnani ', this.srovnani);

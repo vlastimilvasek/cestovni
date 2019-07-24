@@ -1,182 +1,183 @@
 <div id="srovnani">
-<div class="row">
-	<div class="col">
-
-		<!-- šablona tabulka topped -->
-		<div *ngIf="topped.length">
-		
-		<div *ngIf="layout.table" class="card table"> <!-- [@list]="offers.length" -->
-			<div class="card-header">
-				<div class="row">
-					<div class="col">
-						<h5 class="text-primary vagl mb-0">{{ 'SROVNANI.TOPPED' | translate }}</h5>
-					</div>
-				</div>		
-			</div>	
-			<div class="card-body">
-				<!-- @items -->
-                <div @items *ngFor="let r of topped" class="row partner align-items-center" [class.selected]="r.id === data.produkt"
-                    (click)="layout.produktCollapsed[r.id] = !layout.produktCollapsed[r.id]"
-                    [attr.aria-expanded]="!layout.produktCollapsed[r.id]" aria-controls="produktCollapsed"
-                >					
-					<div class="col-5 col-md col-lg-2">
-						<img src="{{ LOGA[r.pojistovna] }}" class="img-fluid" style="max-height:60px;" alt="{{ r.pojistovna }}" />
-						<i class="fas fa-chevron-down hidden-md-up"></i>
-					</div>
-					<div class="col col-lg-2 hidden-sm-down vag {{ r?.cssExtra }}"><span [outerHTML]="r.produkt"></span></div>
-					<div class="col-lg-2 hidden-md-down text-right"
-							placement="top auto"
-							triggers="mouseenter:mouseleave"
-							tooltip="{{ 'SROVNANI.LV.HINT' | translate }}">						
-						<span [outerHTML]="r.params.lvl.hodnota | menaFormat"></span>
-					</div>
-					<div class="col-2 text-center hidden-sm-down"><i class="fas fa-chevron-down"></i>&nbsp;<small>{{ 'SROVNANI.INFO.SHOW' | translate }}</small></div>
-					<div class="col col-md-2 text-right pl-0 cena vag"><span [innerHTML]="r.cena | menaFormat"></span></div>
-					<div class="col col-md-2 text-right">
-						<a class="btn btn-success" (click)="GAEvent('CEST', r.pojistovna, 'Proklik na sjednani', r.cena);" href="{{r.link}}" target="_onlinesjed{{r.kalk}}">
-							{{ 'FORM.BUTTONS.SJEDNAT' | translate }}
-							<i class="fa fa-chevron-right"></i>
-						</a>
-					</div>
-					<!-- detail : -->
-					<div id="produktCollapsed_{{r.id}}" [collapse]="layout.produktCollapsed[r.id]" class="col-12 order-4">
-						<hr class="my-0" />
-						<div class="row mb-2">
-							<div class="col-12">
-                                <ul *ngIf="r.tipy.length" class="mt-4 fa-ul vagl">
-                                    <li *ngFor="let tt of r.tipy">
-                                         <span [outerHTML]="tt | Tips"></span>
+    <alert type="info" *ngIf="layout.prvniNapoveda && offers.length" [dismissible]="false">
+        <button type="button" class="btn btn-primary float-right" (click)="skryjNapovedu()"><span [innerHTML]="'SROVNANI.FIRSTINFOBUTTON' | translate"></span></button>
+        <div [innerHTML]="'SROVNANI.FIRSTINFO' | translate"></div>
+    </alert>
+    <!-- šablona tabulka topped -->
+    <div *ngIf="topped.length">
+    
+    <div *ngIf="layout.table" class="card table"> <!-- [@list]="offers.length" -->
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <h5 class="text-primary vagl mb-0">{{ 'SROVNANI.TOPPED' | translate }}</h5>
+                </div>
+            </div>		
+        </div>	
+        <div class="card-body">
+            <!-- @items -->
+            <div @items *ngFor="let r of topped" class="row partner align-items-center" [class.selected]="r.id === data.produkt"
+                (click)="layout.produktCollapsed[r.id] = !layout.produktCollapsed[r.id]"
+                [attr.aria-expanded]="!layout.produktCollapsed[r.id]" aria-controls="produktCollapsed"
+            >					
+                <div class="col-5 col-md col-lg-2 produkt {{ r?.cssExtra }}Xs">
+                    <img src="{{ LOGA[r.pojistovna] }}" class="img-fluid" alt="{{ r.pojistovna }}" />
+                    <i class="fas fa-chevron-down hidden-md-up"></i>
+                </div>
+                <div class="col col-lg-2 hidden-sm-down vag {{ r?.cssExtra }}"><span [outerHTML]="r.produkt"></span></div>
+                <div class="col-lg-2 hidden-md-down text-right"
+                        placement="top auto"
+                        triggers="mouseenter:mouseleave"
+                        tooltip="{{ 'SROVNANI.LV.HINT' | translate }}">						
+                    <span [outerHTML]="r.params.lvl.hodnota | menaFormat"></span>
+                </div>
+                <div class="col-2 text-center hidden-sm-down"><i class="fas fa-chevron-down"></i>&nbsp;<small>{{ 'SROVNANI.INFO.SHOW' | translate }}</small></div>
+                <div class="col col-md-2 text-right pl-0 cena vag"><span [innerHTML]="r.cena | menaFormat"></span></div>
+                <div class="col col-md-2 text-right sjednat">
+                    <a class="btn btn-success" (click)="$event.stopPropagation(); GAEvent('CEST', r.pojistovna, 'Proklik na sjednani', r.cena);" href="{{r.link}}" target="_onlinesjed{{r.kalk}}">
+                        {{ 'FORM.BUTTONS.SJEDNAT' | translate }}
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
+                </div>
+                <!-- detail : -->
+                <div id="produktCollapsed_{{r.id}}" [collapse]="layout.produktCollapsed[r.id]" [isAnimated]="true" class="col-12 order-4">
+                    <hr class="my-0" />
+                    <div class="row mb-2">                         
+                        <div class="col-12">
+                            <ul *ngIf="r.tipy.length" class="mt-4 fa-ul vagl">
+                                <li *ngFor="let tt of r.tipy">
+                                        <span [outerHTML]="tt | Tips"></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-5 col-md-6 pl-0">
+                            <div class="mt-4">
+                                <h5 class="visible-sm-down vagl">{{ r.produkt }}</h5>
+                                <div class="clearfix">{{ r.params.lvl.popis }}:<span class="float-right" [innerHTML]="r.params.lvl | menaFormatInfo:r.params.lvl.hodnota"></span></div>
+                                <div class="clearfix">{{ r.params.zub.popis }}:<span class="float-right" [innerHTML]="r.params.zub | menaFormatInfo:r.params.zub.hodnota"></span></div>
+                                <div class="clearfix">{{ r.params.asl.popis }}:<span class="float-right" [innerHTML]="r.params.asl | menaFormatInfo:r.params.asl.hodnota"></span></div>
+                                <div class="clearfix">{{ r.params.auto.popis }}:<span class="float-right" [innerHTML]="r.params.auto | menaFormatInfo:r.params.auto.hodnota"></span></div>
+                                <h6 class="mt-2">{{ 'SROVNANI.ODP.TITLE' | translate }}</h6>									
+                                <div class="clearfix">{{ r.params.odpz.popis }}:<span class="float-right" [innerHTML]="r.params.odpz | menaFormatInfo:r.params.odpz.hodnota"></span></div>
+                                <div class="clearfix">{{ r.params.odpm.popis }}:<span class="float-right" [innerHTML]="r.params.odpm | menaFormatInfo:r.params.odpm.hodnota"></span></div>
+                                <h6 class="mt-2">{{ 'SROVNANI.UR.TITLE' | translate }}</h6>									
+                                <div class="clearfix">{{ r.params.urtn.popis }}:<span class="float-right" [innerHTML]="r.params.urtn | menaFormatInfo:r.params.urtn.hodnota"></span></div>
+                                <div class="clearfix">{{ r.params.urs.popis }}:<span class="float-right" [innerHTML]="r.params.urs | menaFormatInfo:r.params.urs.hodnota"></span></div>
+                                <h6 class="mt-2">{{ 'SROVNANI.ZAV.TITLE' | translate }}</h6>									
+                                <div class="clearfix">{{ r.params.zavl.popis }}:<span class="float-right" [innerHTML]="r.params.zavl | menaFormatInfo:r.params.zavl.hodnota"></span></div>
+                                <div class="clearfix">{{ r.params.zavv.popis }}:<span class="float-right" [innerHTML]="r.params.zavv | menaFormatInfo:r.params.zavv.hodnota"></span></div>
+                            </div>                                
+                        </div>
+                        <div class="col-lg-6 offset-md-1 col-md-5 px-0">
+                            <div *ngIf="r.dokumenty.length">
+                                <h5 class="vagl mt-4">{{ 'SROVNANI.DOKUMENTY' | translate }}</h5>
+                                <ul *ngIf="r.dokumenty.length" class="fa-ul">
+                                    <li *ngFor="let dok of r.dokumenty">
+                                        <a class="" href="{{ dok.url }}" target="_pdf_dok"><span class="fa-li" ><i class="text-danger far fa-file-pdf"></i></span> {{ dok.nazev }}</a>
                                     </li>
-								</ul>
-							</div>
-							<div class="col-lg-5 col-md-6 pl-0">
-                                <div class="mt-4">
-									<div class="clearfix">{{ r.params.lvl.popis }}:<span class="float-right" [innerHTML]="r.params.lvl | menaFormatInfo:r.params.lvl.hodnota"></span></div>
-									<div class="clearfix">{{ r.params.zub.popis }}:<span class="float-right" [innerHTML]="r.params.zub | menaFormatInfo:r.params.zub.hodnota"></span></div>
-									<div class="clearfix">{{ r.params.asl.popis }}:<span class="float-right" [innerHTML]="r.params.asl | menaFormatInfo:r.params.asl.hodnota"></span></div>
-									<div class="clearfix">{{ r.params.auto.popis }}:<span class="float-right" [innerHTML]="r.params.auto | menaFormatInfo:r.params.auto.hodnota"></span></div>
-                                    <h6 class="mt-2">{{ 'SROVNANI.ODP.TITLE' | translate }}</h6>									
-									<div class="clearfix">{{ r.params.odpz.popis }}:<span class="float-right" [innerHTML]="r.params.odpz | menaFormatInfo:r.params.odpz.hodnota"></span></div>
-									<div class="clearfix">{{ r.params.odpm.popis }}:<span class="float-right" [innerHTML]="r.params.odpm | menaFormatInfo:r.params.odpm.hodnota"></span></div>
-                                    <h6 class="mt-2">{{ 'SROVNANI.UR.TITLE' | translate }}</h6>									
-									<div class="clearfix">{{ r.params.urtn.popis }}:<span class="float-right" [innerHTML]="r.params.urtn | menaFormatInfo:r.params.urtn.hodnota"></span></div>
-									<div class="clearfix">{{ r.params.urs.popis }}:<span class="float-right" [innerHTML]="r.params.urs | menaFormatInfo:r.params.urs.hodnota"></span></div>
-                                    <h6 class="mt-2">{{ 'SROVNANI.ZAV.TITLE' | translate }}</h6>									
-									<div class="clearfix">{{ r.params.zavl.popis }}:<span class="float-right" [innerHTML]="r.params.zavl | menaFormatInfo:r.params.zavl.hodnota"></span></div>
-									<div class="clearfix">{{ r.params.zavv.popis }}:<span class="float-right" [innerHTML]="r.params.zavv | menaFormatInfo:r.params.zavv.hodnota"></span></div>
-								</div>                                
-							</div>
-							<div class="col-lg-6 offset-md-1 col-md-5 px-0">
-                                <div *ngIf="r.dokumenty.length">
-                                    <h5 class="vagl mt-4">{{ 'SROVNANI.DOKUMENTY' | translate }}</h5>
-                                    <ul *ngIf="r.dokumenty.length" class="fa-ul">
-                                        <li *ngFor="let dok of r.dokumenty">
-                                            <a class="" href="{{ dok.url }}" target="_pdf_dok"><span class="fa-li" ><i class="text-danger far fa-file-pdf"></i></span> {{ dok.nazev }}</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="hidden-md-down" [innerHTML]="r?.imgExtra"></div> 
-                            </div>                        
-						</div>
-					</div>  
+                                </ul>
+                            </div>
+                            <div class="hidden-md-down" [innerHTML]="r?.imgExtra"></div> 
+                        </div>                        
+                    </div>
+                </div>  
 
-				</div>
-			</div>
-		</div>
-		</div>
+            </div>
+        </div>
+    </div>
+    </div>
 
-		<!-- šablona tabulka validní -->
-		<div *ngIf="offers.length">
-		
-		<div *ngIf="layout.table" class="card table"> <!-- [@list]="offers.length" -->
-			<div class="card-header">
-				<div class="row align-items-center">
-					<div class="col col-lg-2">{{ 'SROVNANI.PARTNER' | translate }}</div>
-					<div class="col col-lg-2 hidden-sm-down">{{ 'SROVNANI.PRODUKT.TITLE' | translate }}</div>					
-					<div class="col-lg-2 hidden-md-down text-right"
-						placement="top auto"
-						triggers="mouseenter:mouseleave"
-						tooltip="{{ 'SROVNANI.LV.HINT' | translate }}">
-						{{ 'SROVNANI.LV.TITLE' | translate }}</div>
-					<div class="col-2 text-center hidden-sm-down"
-						placement="top"
-						triggers="mouseenter:mouseleave"
-						popover="{{ 'SROVNANI.INFO.HINT' | translate }}">
-						{{ 'SROVNANI.INFO.TITLE' | translate }}</div>												
-					<div class="col-7 col-md-4 text-center" [innerHTML]="'SROVNANI.CENATITLE' | translate:{dnu: data.pocet_dnu, osob: data.osoby.length}"></div>			
-				</div>
-			</div>
-			<div class="card-body">
-				<!-- @items -->
-                <div @items *ngFor="let r of offers" class="row partner align-items-center" [class.selected]="r.id === data.produkt"
-                    (click)="layout.produktCollapsed[r.id] = !layout.produktCollapsed[r.id]"
-                    [attr.aria-expanded]="!layout.produktCollapsed[r.id]" aria-controls="produktCollapsed"
-                >
-					<div class="col-5 col-md col-lg-2">
-						<img src="{{ LOGA[r.pojistovna] }}" class="img-fluid" style="max-height:60px;" alt="{{ r.pojistovna }}" />
-						<i class="fas fa-chevron-down hidden-md-up"></i>
-					</div>
-					<div class="col col-lg-2 hidden-sm-down vag {{ r?.cssExtra }}"><span [outerHTML]="r.produkt"></span></div>
-					<div class="col-lg-2 hidden-md-down text-right"
-							placement="top auto"
-							triggers="mouseenter:mouseleave"
-							tooltip="{{ 'SROVNANI.LV.HINT' | translate }}">						
-						<span [outerHTML]="r.params.lvl.hodnota | menaFormat"></span>
-					</div>
-					<div class="col-2 text-center hidden-sm-down"><i class="fas fa-chevron-down"></i>&nbsp;<small>{{ 'SROVNANI.INFO.SHOW' | translate }}</small></div>
-					<div class="col col-md-2 text-right pl-0 cena vag"><span [innerHTML]="r.cena | menaFormat"></span></div>
-					<div class="col col-md-2 text-right">
-						<a class="btn btn-success" (click)="GAEvent('CEST', r.pojistovna, 'Proklik na sjednani', r.cena);" href="{{r.link}}" target="_onlinesjed{{r.kalk}}">
-							{{ 'FORM.BUTTONS.SJEDNAT' | translate }}
-							<i class="fa fa-chevron-right"></i>
-						</a>
-					</div>
-					<!-- detail : -->
-					<div id="produktCollapsed_{{r.id}}" [collapse]="layout.produktCollapsed[r.id]" class="col-12 order-4">
-						<hr class="my-0" />
-						<div class="row mb-2">
-							<div class="col-12">
-                                <ul *ngIf="r.tipy.length" class="mt-4 fa-ul vagl">
-                                    <li *ngFor="let tt of r.tipy">
-                                         <span [outerHTML]="tt | Tips"></span>
+    <!-- šablona tabulka validní -->
+    <div *ngIf="offers.length">
+    
+    <div *ngIf="layout.table" class="card table"> <!-- [@list]="offers.length" -->
+        <div class="card-header">
+            <div class="row align-items-center">
+                <div class="col col-lg-2">{{ 'SROVNANI.PARTNER' | translate }}</div>
+                <div class="col col-lg-2 hidden-sm-down">{{ 'SROVNANI.PRODUKT.TITLE' | translate }}</div>					
+                <div class="col-lg-2 hidden-md-down text-right"
+                    placement="top auto"
+                    triggers="mouseenter:mouseleave"
+                    tooltip="{{ 'SROVNANI.LV.HINT' | translate }}">
+                    {{ 'SROVNANI.LV.TITLE' | translate }}</div>
+                <div class="col-2 text-center hidden-sm-down"
+                    placement="top"
+                    triggers="mouseenter:mouseleave"
+                    popover="{{ 'SROVNANI.INFO.HINT' | translate }}">
+                    {{ 'SROVNANI.INFO.TITLE' | translate }}</div>												
+                <div class="col-7 col-md-4 text-center" [innerHTML]="'SROVNANI.CENATITLE' | translate:{dnu: data.pocet_dnu, osob: data.osoby.length}"></div>			
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- @items -->
+            <div @items *ngFor="let r of offers" class="row partner align-items-center" [class.selected]="r.id === data.produkt"
+                (click)="layout.produktCollapsed[r.id] = !layout.produktCollapsed[r.id]"
+                [attr.aria-expanded]="!layout.produktCollapsed[r.id]" aria-controls="produktCollapsed"
+            >
+                <div class="col-5 col-md col-lg-2 produkt {{ r?.cssExtra }}Xs">
+                    <img src="{{ LOGA[r.pojistovna] }}" class="img-fluid" alt="{{ r.pojistovna }}" />
+                    <i class="fas fa-chevron-down hidden-md-up"></i>
+                </div>
+                <div class="col col-lg-2 hidden-sm-down vag {{ r?.cssExtra }}"><span [outerHTML]="r.produkt"></span></div>
+                <div class="col-lg-2 hidden-md-down text-right"
+                        placement="top auto"
+                        triggers="mouseenter:mouseleave"
+                        tooltip="{{ 'SROVNANI.LV.HINT' | translate }}">						
+                    <span [outerHTML]="r.params.lvl.hodnota | menaFormat"></span>
+                </div>
+                <div class="col-2 text-center hidden-sm-down"><i class="fas fa-chevron-down"></i>&nbsp;<small>{{ 'SROVNANI.INFO.SHOW' | translate }}</small></div>
+                <div class="col col-md-2 text-right pl-0 cena vag"><span [innerHTML]="r.cena | menaFormat"></span></div>
+                <div class="col col-md-2 text-right sjednat">
+                    <a class="btn btn-success" (click)="$event.stopPropagation(); GAEvent('CEST', r.pojistovna, 'Proklik na sjednani', r.cena);" href="{{r.link}}" target="_onlinesjed{{r.kalk}}">
+                        {{ 'FORM.BUTTONS.SJEDNAT' | translate }}
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
+                </div>
+                <!-- detail : -->
+                <div id="produktCollapsed_{{r.id}}" [collapse]="layout.produktCollapsed[r.id]" [isAnimated]="true" class="col-12 order-4">
+                    <hr class="my-0" />
+                    <div class="row mb-2">
+                        <div class="visible-sm-down vag col-12">
+                            <ul *ngIf="r.tipy.length" class="mt-4 fa-ul vagl">
+                                <li *ngFor="let tt of r.tipy">
+                                        <span [outerHTML]="tt | Tips"></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-5 col-md-6 pl-0">
+                            <div class="mt-4">
+                                <h5 class="visible-sm-down vagl">{{ r.produkt }}</h5>
+                                <div class="clearfix">{{ r.params.lvl.popis }}:<span class="float-right" [innerHTML]="r.params.lvl | menaFormatInfo:r.params.lvl.hodnota"></span></div>
+                                <div class="clearfix">{{ r.params.zub.popis }}:<span class="float-right" [innerHTML]="r.params.zub | menaFormatInfo:r.params.zub.hodnota"></span></div>
+                                <div class="clearfix">{{ r.params.asl.popis }}:<span class="float-right" [innerHTML]="r.params.asl | menaFormatInfo:r.params.asl.hodnota"></span></div>
+                                <div class="clearfix">{{ r.params.auto.popis }}:<span class="float-right" [innerHTML]="r.params.auto | menaFormatInfo:r.params.auto.hodnota"></span></div>
+                                <h6 class="mt-2">{{ 'SROVNANI.ODP.TITLE' | translate }}</h6>									
+                                <div class="clearfix">{{ r.params.odpz.popis }}:<span class="float-right" [innerHTML]="r.params.odpz | menaFormatInfo:r.params.odpz.hodnota"></span></div>
+                                <div class="clearfix">{{ r.params.odpm.popis }}:<span class="float-right" [innerHTML]="r.params.odpm | menaFormatInfo:r.params.odpm.hodnota"></span></div>
+                                <h6 class="mt-2">{{ 'SROVNANI.UR.TITLE' | translate }}</h6>									
+                                <div class="clearfix">{{ r.params.urtn.popis }}:<span class="float-right" [innerHTML]="r.params.urtn | menaFormatInfo:r.params.urtn.hodnota"></span></div>
+                                <div class="clearfix">{{ r.params.urs.popis }}:<span class="float-right" [innerHTML]="r.params.urs | menaFormatInfo:r.params.urs.hodnota"></span></div>
+                                <h6 class="mt-2">{{ 'SROVNANI.ZAV.TITLE' | translate }}</h6>									
+                                <div class="clearfix">{{ r.params.zavl.popis }}:<span class="float-right" [innerHTML]="r.params.zavl | menaFormatInfo:r.params.zavl.hodnota"></span></div>
+                                <div class="clearfix">{{ r.params.zavv.popis }}:<span class="float-right" [innerHTML]="r.params.zavv | menaFormatInfo:r.params.zavv.hodnota"></span></div>
+                            </div>                                
+                        </div>
+                        <div class="col-lg-6 offset-md-1 col-md-5 px-0">
+                            <div *ngIf="r.dokumenty.length">
+                                <h5 class="vagl mt-4">{{ 'SROVNANI.DOKUMENTY' | translate }}</h5>
+                                <ul *ngIf="r.dokumenty.length" class="fa-ul">
+                                    <li *ngFor="let dok of r.dokumenty">
+                                        <a class="" href="{{ dok.url }}" target="_pdf_dok"><span class="fa-li" ><i class="text-danger far fa-file-pdf"></i></span> {{ dok.nazev }}</a>
                                     </li>
-								</ul>
-							</div>
-							<div class="col-lg-5 col-md-6 pl-0">
-                                <div class="mt-4">
-									<div class="clearfix">{{ r.params.lvl.popis }}:<span class="float-right" [innerHTML]="r.params.lvl | menaFormatInfo:r.params.lvl.hodnota"></span></div>
-									<div class="clearfix">{{ r.params.zub.popis }}:<span class="float-right" [innerHTML]="r.params.zub | menaFormatInfo:r.params.zub.hodnota"></span></div>
-									<div class="clearfix">{{ r.params.asl.popis }}:<span class="float-right" [innerHTML]="r.params.asl | menaFormatInfo:r.params.asl.hodnota"></span></div>
-									<div class="clearfix">{{ r.params.auto.popis }}:<span class="float-right" [innerHTML]="r.params.auto | menaFormatInfo:r.params.auto.hodnota"></span></div>
-                                    <h6 class="mt-2">{{ 'SROVNANI.ODP.TITLE' | translate }}</h6>									
-									<div class="clearfix">{{ r.params.odpz.popis }}:<span class="float-right" [innerHTML]="r.params.odpz | menaFormatInfo:r.params.odpz.hodnota"></span></div>
-									<div class="clearfix">{{ r.params.odpm.popis }}:<span class="float-right" [innerHTML]="r.params.odpm | menaFormatInfo:r.params.odpm.hodnota"></span></div>
-                                    <h6 class="mt-2">{{ 'SROVNANI.UR.TITLE' | translate }}</h6>									
-									<div class="clearfix">{{ r.params.urtn.popis }}:<span class="float-right" [innerHTML]="r.params.urtn | menaFormatInfo:r.params.urtn.hodnota"></span></div>
-									<div class="clearfix">{{ r.params.urs.popis }}:<span class="float-right" [innerHTML]="r.params.urs | menaFormatInfo:r.params.urs.hodnota"></span></div>
-                                    <h6 class="mt-2">{{ 'SROVNANI.ZAV.TITLE' | translate }}</h6>									
-									<div class="clearfix">{{ r.params.zavl.popis }}:<span class="float-right" [innerHTML]="r.params.zavl | menaFormatInfo:r.params.zavl.hodnota"></span></div>
-									<div class="clearfix">{{ r.params.zavv.popis }}:<span class="float-right" [innerHTML]="r.params.zavv | menaFormatInfo:r.params.zavv.hodnota"></span></div>
-								</div>                                
-							</div>
-							<div class="col-lg-6 offset-md-1 col-md-5 px-0">
-                                <div *ngIf="r.dokumenty.length">
-                                    <h5 class="vagl mt-4">{{ 'SROVNANI.DOKUMENTY' | translate }}</h5>
-                                    <ul *ngIf="r.dokumenty.length" class="fa-ul">
-                                        <li *ngFor="let dok of r.dokumenty">
-                                            <a class="" href="{{ dok.url }}" target="_pdf_dok"><span class="fa-li" ><i class="text-danger far fa-file-pdf"></i></span> {{ dok.nazev }}</a>
-                                        </li>
-                                    </ul>
-                                </div> 
-                            </div>                        
-						</div>
-					</div>  
+                                </ul>
+                            </div> 
+                        </div>                        
+                    </div>
+                </div>  
 
-				</div>
-			</div>
-		</div>
-		</div>
+            </div>
+        </div>
+    </div>
+    </div>
 
-	</div>
-</div>
 </div>
