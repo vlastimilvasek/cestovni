@@ -24,7 +24,7 @@
     "@nicky-lenaers/ngx-scroll-to": "^2.0.0",
     "braces": "^3.0.2",
     "core-js": "^3.1.4",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.19",
     "ngx-bootstrap": "^5.1.0",
     "ngx-select-ex": "^3.7.0",
     "pdfmake": "^0.1.57",
